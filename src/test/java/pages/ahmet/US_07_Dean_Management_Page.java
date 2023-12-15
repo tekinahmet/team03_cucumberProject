@@ -48,7 +48,4 @@ public class US_07_Dean_Management_Page {
     @FindBy(xpath = "//th[.='Message']")
     public WebElement verifyMessage;
 
-
-
-
 }
