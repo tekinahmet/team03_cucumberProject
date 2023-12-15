@@ -4,17 +4,16 @@ Feature: US_07 Deans should be able to see the messages sent by users.
   Background: login_successfully
     Given go to homepage
     When click login button
-    And enter username "<username>"
-    And enter password "<password>"
+    And enter username "jackdoe159"
+    And enter password "Jackdough159"
     And click login
 
   @TC_01
-  Scenario Outline: TC_01 User should login successfully.
+  Scenario: TC_01 User should login successfully.
     Then verify User logged in
 
-    Examples: test_data
-    |username  |password    |
-    |jackdoe159|Jackdough159|
+
+
 
   @TC_02
   Scenario: TC_02 User should be able to see the delete button.
