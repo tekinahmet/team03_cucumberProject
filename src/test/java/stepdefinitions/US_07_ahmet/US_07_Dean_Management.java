@@ -19,11 +19,11 @@ public class US_07_Dean_Management {
     }
     @When("enter username {string}")
     public void enter_username(String string) {
-        us_07_dean_management_page.username.sendKeys("jackdoe159");
+        us_07_dean_management_page.username.sendKeys(string);
     }
     @When("enter password {string}")
     public void enter_password(String string) {
-        us_07_dean_management_page.password.sendKeys("Jackdough159");
+        us_07_dean_management_page.password.sendKeys(string);
     }
     @When("click login")
     public void click_login() {
