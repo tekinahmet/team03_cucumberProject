@@ -40,6 +40,12 @@ public class US_07_Dean_Management {
         us_07_dean_management_page.menu.click();
         WaitUtils.waitFor(1);
     }
+    @When("User signed out")
+    public void user_signed_out() {
+        us_07_dean_management_page.menu.click();
+        us_07_dean_management_page.logOut.click();
+        us_07_dean_management_page.confirmLogOut.click();
+    }
     @When("verify that User sees contact get all")
     public void verify_that_user_sees_contact_get_all() {
         assertTrue(us_07_dean_management_page.verifyContactGetAll.getText().contains("Contact Get All"));
