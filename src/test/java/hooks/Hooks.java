@@ -20,12 +20,12 @@ public class Hooks {
         if (scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png","failed_screenshot");
-            Driver.closeDriver();
+             Driver.closeDriver();
         }
     }
 
     //    we can use conditional hooks using cucumber tags
-    @After("@tea_pot or @data_tables")
+    @After("@US_07 or @US_17")
     public void afterAllTearDown(){
         System.out.println("This runs only after @tea_pot or @data_tables");
     }
