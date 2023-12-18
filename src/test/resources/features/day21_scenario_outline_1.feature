@@ -1,4 +1,4 @@
-@scenario_outline_1 @regression
+@scenario_outline_1
 Feature: search_feature
   Background: navigate_to_google
     Given user navigates to "https://www.google.com"

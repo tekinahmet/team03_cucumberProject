@@ -1,4 +1,4 @@
-@US_07
+@US_07 @regression
 Feature: US_07 Deans should be able to see the messages sent by users.
 
   Background: login_successfully
