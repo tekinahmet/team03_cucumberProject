@@ -1,4 +1,4 @@
-  @US_17
+  @US_17 @regression
   Feature: US_17 The teacher should be able to give grades to the students.
 
   Background: successful_login
