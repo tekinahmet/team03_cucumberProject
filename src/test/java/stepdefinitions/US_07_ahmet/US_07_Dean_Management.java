@@ -19,11 +19,11 @@ public class US_07_Dean_Management {
     }
     @When("enter username {string}")
     public void enter_username(String string) {
-        us_07_dean_management_page.username.sendKeys("jackdoe159");
+        us_07_dean_management_page.username.sendKeys(string);
     }
     @When("enter password {string}")
     public void enter_password(String string) {
-        us_07_dean_management_page.password.sendKeys("Jackdough159");
+        us_07_dean_management_page.password.sendKeys(string);
     }
     @When("click login")
     public void click_login() {
@@ -39,6 +39,12 @@ public class US_07_Dean_Management {
     public void click_menu_button() {
         us_07_dean_management_page.menu.click();
         WaitUtils.waitFor(1);
+    }
+    @When("User signed out")
+    public void user_signed_out() {
+        us_07_dean_management_page.menu.click();
+        us_07_dean_management_page.logOut.click();
+        us_07_dean_management_page.confirmLogOut.click();
     }
     @When("verify that User sees contact get all")
     public void verify_that_user_sees_contact_get_all() {

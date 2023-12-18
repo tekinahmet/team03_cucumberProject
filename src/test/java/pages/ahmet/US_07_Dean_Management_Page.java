@@ -28,6 +28,10 @@ public class US_07_Dean_Management_Page {
     //TC_02
     @FindBy(xpath = "//button[.='Menu']")
     public WebElement menu;
+    @FindBy(xpath = "//a[.='Logout']")
+    public WebElement logOut;
+    @FindBy(xpath = "//button[.='Yes']")
+    public WebElement confirmLogOut;
     @FindBy(xpath = "//a[.='Contact Get All']")
     public WebElement verifyContactGetAll;
     @FindBy(xpath = "//a[.='Contact Get All']")
