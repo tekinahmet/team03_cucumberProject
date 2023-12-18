@@ -25,7 +25,7 @@ public class Hooks {
     }
 
     //    we can use conditional hooks using cucumber tags
-    @After("@tea_pot or @data_tables")
+    @After("@US_07 or @US_17")
     public void afterAllTearDown(){
         System.out.println("This runs only after @tea_pot or @data_tables");
     }
