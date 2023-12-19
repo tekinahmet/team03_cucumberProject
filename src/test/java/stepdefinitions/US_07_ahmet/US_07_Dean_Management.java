@@ -2,6 +2,7 @@ package stepdefinitions.US_07_ahmet;
 
 import io.cucumber.java.en.*;
 import pages.ahmet.US_07_Dean_Management_Page;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.WaitUtils;
 
@@ -11,7 +12,7 @@ public class US_07_Dean_Management {
     US_07_Dean_Management_Page us_07_dean_management_page = new US_07_Dean_Management_Page();
     @Given("go to homepage")
     public void go_to_homepage() {
-        Driver.getDriver().get("https://managementonschools.com/");
+        Driver.getDriver().get(ConfigReader.getProperty("managementOnSchool_URL"));
     }
     @When("click login button")
     public void click_login_button() {
