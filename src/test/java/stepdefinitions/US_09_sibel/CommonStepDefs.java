@@ -1,4 +1,5 @@
 package stepdefinitions.US_09_sibel;
-public class example {
+
+public class CommonStepDefs {
 
 }
