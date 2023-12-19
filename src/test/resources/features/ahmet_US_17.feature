@@ -2,7 +2,7 @@
   Feature: US_17 The teacher should be able to give grades to the students.
 
   Background: successful_login
-    Given navigate to homepage "https://managementonschools.com/"
+    Given navigate to homepage
     When click on login button
     And enter user name "teacherdonald"
     And enter Password "Donald123"

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import pages.ahmet.US_17_Teacher_Management_Page;
+import pages.fatma.Fatma_US_22_Admin;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.WaitUtils;
 
@@ -14,9 +16,9 @@ public class US_17_Teacher_Management {
     US_17_Teacher_Management_Page us_17_teacher_management_page = new US_17_Teacher_Management_Page();
 
     //background
-    @Given("navigate to homepage {string}")
-    public void navigate_to_homepage(String string) {
-        Driver.getDriver().get(string);
+    @Given("navigate to homepage")
+    public void navigate_to_homepage() {
+        Driver.getDriver().get(ConfigReader.getProperty("managementOnSchool_URL"));
     }
 
     @When("click on login button")
