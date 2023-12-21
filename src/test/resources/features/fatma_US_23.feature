@@ -59,7 +59,7 @@ Feature:US_23 Add Vice Dean with admin account
     And  User enters an username
     And  User enters a password as required
     And  User clicks on the submit button
-    Then user should not be able to log in with that imposible date
+    Then user should not be able to log in with that impossible date
 
   @US_23_TC_05
   Scenario: TC_05 Testing the SSN part with possibilities
