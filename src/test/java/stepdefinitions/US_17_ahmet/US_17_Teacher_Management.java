@@ -146,7 +146,7 @@ public class US_17_Teacher_Management {
     }
     @Then("verify User sees education term in Student Info list")
     public void verify_user_sees_education_term_in_student_info_list() throws InterruptedException {
-       us_17_teacher_management_page.verifyTerm.isDisplayed();
+        us_17_teacher_management_page.verifyTerm.isDisplayed();
     }
 
     //tc_07
@@ -166,16 +166,16 @@ public class US_17_Teacher_Management {
     }
     @Then("verify User sees midterm exam required message in Student Info list")
     public void verify_user_sees_midterm_exam_required_message_in_student_info_list() {
-       us_17_teacher_management_page.verifyMidtermExamRequired.isDisplayed();
+        us_17_teacher_management_page.verifyMidtermExamRequired.isDisplayed();
     }
     //tc_09
     @When("leave Final Exam blank")
     public void leave_final_exam_blank() {
-       us_17_teacher_management_page.finalExam.sendKeys("");
+        us_17_teacher_management_page.finalExam.sendKeys("");
     }
     @Then("verify User sees final exam required message in Student Info list")
     public void verify_user_sees_final_exam_required_message_in_student_info_list() {
-       us_17_teacher_management_page.verifyFinalExamRequired.isDisplayed();
+        us_17_teacher_management_page.verifyFinalExamRequired.isDisplayed();
     }
     //tc_10
     @When("leave Info Note About The Student blank")
