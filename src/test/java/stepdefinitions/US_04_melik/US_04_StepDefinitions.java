@@ -2,9 +2,9 @@ package stepdefinitions.US_04_melik;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
-import pages.melik.US_04_AdminPage;
-import pages.melik.US_04_DeanPage;
-import pages.melik.US_04_LoginPage;
+import pages.melik.Melik_AdminPage;
+import pages.melik.Melik_DeanPage;
+import pages.melik.Melik_LoginPage;
 import utilities.Driver;
 
 
@@ -12,9 +12,13 @@ import static org.junit.Assert.*;
 
 public class US_04_StepDefinitions {
 
-    US_04_LoginPage loginPage = new US_04_LoginPage();
-    US_04_AdminPage adminPage = new US_04_AdminPage();
-    US_04_DeanPage deanPage = new US_04_DeanPage();
+    Melik_LoginPage loginPage = new Melik_LoginPage();
+    Melik_AdminPage adminPage = new Melik_AdminPage();
+    Melik_DeanPage deanPage = new Melik_DeanPage();
+
+    public static String userName;
+    public static String password;
+    public static String firstName;
 
     @Given("User navigates to the {string}")
     public void user_navigates_to_the(String url) {
@@ -69,6 +73,8 @@ public class US_04_StepDefinitions {
     @When("User enters the name {string}")
     public void user_enters_the_name(String name) {
 
+        firstName = Faker.instance().name().firstName();
+        deanPage.name.click();
         deanPage.name.sendKeys(Faker.instance().name().firstName());
 
     }
@@ -95,11 +101,13 @@ public class US_04_StepDefinitions {
     @When("User enters the Date of Birth")
     public void user_enters_the_date_of_birth() {
 
-        deanPage.DateOfBirth.sendKeys("11.02.1995");
+        deanPage.DateOfBirth.sendKeys("11021995");
 
     }
+
     @When("User enters the phone number {string} as xxx-xxx-xxxx")
     public void user_enters_the_phone_number_as_xxx_xxx_xxxx(String string) {
+
 
         deanPage.phoneNumber.sendKeys(""+Faker.instance().number().digits(3)+
                 "-"+Faker.instance().number().digits(3)+"-"+Faker.instance().number().digits(4));
@@ -112,16 +120,27 @@ public class US_04_StepDefinitions {
                 "-"+Faker.instance().number().digits(2)+"-"+Faker.instance().number().digits(4));
 
     }
+
     @When("User enters the User Name {string}")
     public void user_enters_the_user_name(String string) {
 
-        deanPage.username.sendKeys(Faker.instance().name().username());
+        userName = Faker.instance().name().username();
+        deanPage.username.sendKeys(userName);
 
     }
-    @When("User enters Password {string} \\(at least eight characters, one number, uppercase letter, lowercase letter)")
-    public void user_enters_password_at_least_eight_characters_one_number_uppercase_letter_lowercase_letter(String string) {
 
-        deanPage.password.sendKeys(Faker.instance().internet().password(9,11,true,true,true));
+//    @When("User enters Password {string} \\(at least eight characters, one number, uppercase letter, lowercase letter)")
+//    public void user_enters_password_at_least_eight_characters_one_number_uppercase_letter_lowercase_letter(String string) {
+//
+//        deanPage.password.sendKeys(Faker.instance().internet().password(9,11,true,true,true));
+//
+//    }
+
+    @When("User enters Password {string}")
+    public void user_enters_password(String Password) {
+
+        password = Password;
+        deanPage.password.sendKeys(password);
 
     }
     @When("User click the submit button")
@@ -130,4 +149,131 @@ public class US_04_StepDefinitions {
         deanPage.submitButton.click();
 
     }
+
+    @Then("Verify that the alert is visible Dean Saved")
+    public void verifyThatTheAlertIsVisibleDeanSaved() throws InterruptedException {
+
+        assertTrue(deanPage.alertForDean.isDisplayed());
+        Thread.sleep(2);
+    }
+
+
+    @When("User leaves blank into the name {string}")
+    public void user_leaves_blank_into_the_name(String name) {
+
+        deanPage.name.sendKeys(name);
+
+    }
+    @When("User leaves blank into the Surname {string}")
+    public void user_leaves_blank_into_the_surname(String Surname) {
+
+        deanPage.surname.sendKeys(Surname);
+    }
+    @When("User leaves blank into the Birth Place {string}")
+    public void user_leaves_blank_into_the_birth_place(String string) {
+
+     deanPage.birthPlace.sendKeys(string);
+    }
+    @When("User leaves blank into the Date of Birth {string}")
+    public void user_leaves_blank_into_the_date_of_birth(String string) {
+
+        deanPage.DateOfBirth.sendKeys(string);
+    }
+    @When("User leaves blank into the Phone number {string}")
+    public void user_leaves_blank_into_the_phone_number(String string) {
+
+        deanPage.phoneNumber.sendKeys(string);
+    }
+    @When("User leaves blank into the Ssn Number {string}")
+    public void user_leaves_blank_into_the_ssn_number(String string) {
+
+        deanPage.ssnNumber.sendKeys(string);
+    }
+    @When("User leaves blank into the User Name {string}")
+    public void user_leaves_blank_into_the_user_name(String string) {
+
+        deanPage.username.sendKeys(string);
+    }
+    @Then("Verify that the text is visible as Required")
+    public void verifyThatTheTextIsVisibleAsRequired() {
+
+            assertTrue(deanPage.verifyName.getText().contains("Required"));
+            assertTrue(deanPage.verifySurname.getText().contains("Required"));
+            assertTrue(deanPage.verifyBirthPlace.getText().contains("Required"));
+            assertTrue(deanPage.verifyDateOfBirth.getText().contains("Required"));
+            assertTrue(deanPage.verifyPhoneNumber.getText().contains("Required"));
+            assertTrue(deanPage.verifySsnNumber.getText().contains("Required"));
+            assertTrue(deanPage.verifyUserName.getText().contains("Required"));
+            assertTrue(deanPage.verifyPassword.getText().contains("Enter your password"));
+
+    }
+
+    @When("User leaves blank into the Password {string}")
+    public void user_leaves_blank_into_the_password(String Password) {
+
+        deanPage.password.sendKeys(Password);
+    }
+
+    @When("User enters the invalid Ssn Number {string} as xxx-xx-xxxx")
+    public void user_enters_the_invalid_ssn_number_as_xxx_xx_xxxx(String string) {
+        deanPage.ssnNumber.click();
+        deanPage.ssnNumber.sendKeys(string);
+    }
+
+
+    @Then("Verify that the alert is visible Please enter valid SSN number")
+    public void verifyThatTheAlertIsVisiblePleaseEnterValidSSNNumber() {
+
+//        JSUtils.JSclickWithTimeout(deanPage.alertForSsn);
+//        assertTrue(Driver.getDriver().switchTo().alert().getText().contains("enter valid"));
+
+//        Actions actions = new Actions(Driver.getDriver());
+//        actions.clickAndHold(deanPage.alertForSsn).perform();
+//        assertTrue(Driver.getDriver().switchTo().alert().getText().contains("enter valid"));
+
+
+        assertTrue(deanPage.alertForSsn.isDisplayed());
+        
+    }
+
+    @Then("Verify that the text is visible for Ssn Number")
+    public void verifyThatTheAlertIsVisibleForSsnNumber() {
+
+        assertTrue(deanPage.verifySsnNumber.getText().contains("Minimum 11"));
+    }
+
+
+
+    @When("User enters invalid Password {string}")
+    public void user_enters_invalid_password(String Password) {
+        deanPage.password.sendKeys(Password);
+
+    }
+    @Then("Verify that the text is visible for password")
+    public void verifyThatTheTextIsVisibleForPassword() {
+
+        String invalidPasswordText = deanPage.verifyPassword.getText();
+        if(invalidPasswordText.contains("At least 8 characters")){
+            assertTrue(deanPage.verifyPassword.getText().contains("At least 8 characters"));
+
+        } else if (invalidPasswordText.contains("uppercase")) {
+            assertTrue(deanPage.verifyPassword.getText().contains("uppercase"));
+
+        } else if (invalidPasswordText.contains("lowercase")) {
+            assertTrue(deanPage.verifyPassword.getText().contains("lowercase"));
+            
+        }else {assertTrue(deanPage.verifyPassword.getText().contains("number"));}
+    }
+
+
+
+
+
+    @Then("Close the application")
+    public void close_the_application() {
+        Driver.closeDriver();
+    }
+
+
+
 }
