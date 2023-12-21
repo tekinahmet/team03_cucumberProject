@@ -58,7 +58,7 @@ public class JSUtils {
     /*
     param : Id of the the element
      */
-    public static String JSgetValueBy(String idOfElement){
+    public static String JSgetValueBy(WebElement selectTeacher, String idOfElement){
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         String value=js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
         System.out.println(value);
