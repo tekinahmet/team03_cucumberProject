@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US_04_LoginPage {
+public class Melik_LoginPage {
 
-    public US_04_LoginPage(){
+    public Melik_LoginPage(){
 
         PageFactory.initElements(Driver.getDriver(),this);
 

@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US_04_AdminPage {
+public class Melik_AdminPage {
 
 
-    public US_04_AdminPage(){
+    public Melik_AdminPage(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -18,5 +18,9 @@ public class US_04_AdminPage {
 
     @FindBy(partialLinkText = "Dean Management")
     public WebElement deanManagement;
+
+    @FindBy(partialLinkText = "Teacher Management")
+    public WebElement teacherManagement;
+
 
 }
