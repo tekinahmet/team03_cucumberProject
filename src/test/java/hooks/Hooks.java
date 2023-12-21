@@ -27,6 +27,6 @@ public class Hooks {
     //    we can use conditional hooks using cucumber tags
     @After("@US_07 or @US_17")
     public void afterAllTearDown(){
-        System.out.println("This runs only after @tea_pot or @data_tables");
+        System.out.println("This runs only after @regressionzaman ");
     }
 }
