@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class Fatma_US_22 {
-    public Fatma_US_22() {
+public class Fatma_US_login {
+    public Fatma_US_login() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -24,29 +24,6 @@ public class Fatma_US_22 {
 
     @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']")
     public WebElement loginButton;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
