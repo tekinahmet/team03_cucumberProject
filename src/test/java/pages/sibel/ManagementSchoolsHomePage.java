@@ -7,12 +7,10 @@ import utilities.Driver;
 
 public class ManagementSchoolsHomePage {
 
-    public void managementSchoolHomePage(){
+    public ManagementSchoolsHomePage(){
 
-        PageFactory.initElements(Driver.getDriver(),this);
-
-    }
-    @FindBy(linkText = "login")
+        PageFactory.initElements(Driver.getDriver(),this); }
+    @FindBy(xpath = "//a[@href='/login']")
     public WebElement login;
 
 }
