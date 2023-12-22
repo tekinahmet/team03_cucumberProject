@@ -9,7 +9,6 @@ public class US_03_ContactPage_Page {
     public US_03_ContactPage_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
     @FindBy(xpath = "//*[.='Contact']")
     public WebElement contactLink;
 
@@ -33,6 +32,9 @@ public class US_03_ContactPage_Page {
 
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement contactCreatedAlertMessage;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement invalidEmailAlertMessage;
 
 
 }
